@@ -1,0 +1,27 @@
+RELATÓRIO DE TESTES - P5 (filtros e bordas)
+==================================================
+
+1. Remoção de ruído sal e pimenta (5%) - imagem em cinza
+   Sem filtro : MSE=   981.77  PSNR= 18.21 dB
+   Média 3x3   : MSE=   152.10  PSNR= 26.31 dB
+   Mediana 3x3 : MSE=    23.40  PSNR= 34.44 dB
+   Mediana 5x5 : MSE=    53.98  PSNR= 30.81 dB
+   Pixels corrompidos corrigidos pela mediana 3x3 (tolerância 10): 94.8% (meta >= 80%: ATENDE)
+
+2. Desempenho em 1920x1080 (cinza) - meta < 5 s
+   Média 3x3       :   0.07 s  [OK]
+   Média 7x7       :   0.13 s  [OK]
+   Mediana 3x3     :   0.10 s  [OK]
+   Mediana 5x5     :   0.28 s  [OK]
+   Nitidez unsharp :   0.12 s  [OK]
+   Sobel           :   0.16 s  [OK]
+
+3. Todas as operações em imagem colorida e em cinza (sem erro)
+   colorida média   : OK shape=(900, 450, 3) dtype=uint8
+   colorida mediana : OK shape=(900, 450, 3) dtype=uint8
+   colorida nitidez : OK shape=(900, 450, 3) dtype=uint8
+   colorida sobel   : OK shape=(900, 450) dtype=uint8
+   cinza    média   : OK shape=(900, 450) dtype=uint8
+   cinza    mediana : OK shape=(900, 450) dtype=uint8
+   cinza    nitidez : OK shape=(900, 450) dtype=uint8
+   cinza    sobel   : OK shape=(900, 450) dtype=uint8
